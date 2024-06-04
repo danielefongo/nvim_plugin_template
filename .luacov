@@ -1,0 +1,11 @@
+return {
+  include = { "lua/my_plugin/.+$" },
+  exclude = {
+    "lua/tests/.+$",
+  },
+  modules = {
+    ["my_plugin.*"] = "lua/",
+  },
+  includeuntestedfiles = true,
+}
+-- vim:ft=lua

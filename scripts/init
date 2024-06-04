@@ -1,0 +1,7 @@
+#!/bin/bash
+
+luarocks install luacov
+luarocks install luacov-console
+luarocks install luacov-html
+luarocks install luacheck
+cargo install stylua
