@@ -11,7 +11,7 @@ if [ "$SEQUENTIAL" == 1 ]; then
 fi
 
 if [ -n "$1" ]; then
-	nvim --noplugin -u "$INIT_FILE" -u "$MINIMAL_INIT_FILE" --headless -c "lua require('plenary.busted').run('$1')"
+	nvim -u "$MINIMAL_INIT_FILE" --headless -c "lua require('plenary.busted').run('$1')"
 else
-	nvim --noplugin -u "$INIT_FILE" --headless -c "lua require('plenary.test_harness').test_directory( '$TESTS_DIR', { $SEQUENTIAL minimal_init = '$MINIMAL_INIT_FILE' })" -c "qa!"
+	nvim -u "$MINIMAL_INIT_FILE" --headless -c "lua require('plenary.test_harness').test_directory( '$TESTS_DIR', { $SEQUENTIAL minimal_init = '$MINIMAL_INIT_FILE' })" -c "qa!"
 fi

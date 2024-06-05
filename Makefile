@@ -3,7 +3,7 @@ init:
 	bash ./scripts/init
 
 .PHONY: test
-test: plenary
+test:
 	bash ./scripts/test $(test)
 
 .PHONY: lint
@@ -17,11 +17,6 @@ stylua:
 .PHONY: stylua-fix
 stylua-fix:
 	stylua lua
-
-.PHONY: plenary
-plenary:
-	if [ -d plenary.nvim ]; then cd plenary.nvim && git pull; \
-		else git clone https://github.com/nvim-lua/plenary.nvim; fi
 
 .PHONY: testcov
 testcov:
